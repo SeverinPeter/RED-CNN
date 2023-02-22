@@ -12,9 +12,9 @@ def save_dataset(args):
     patients_list = sorted([d for d in os.listdir(args.data_path) if 'zip' not in d])
     for p_ind, patient in enumerate(patients_list):
         patient_input_path = os.path.join(args.data_path, patient,
-                                          "quarter_{}mm".format(args.mm))
+                                          "quarter_{}mm_sharp".format(args.mm))
         patient_target_path = os.path.join(args.data_path, patient,
-                                           "full_{}mm".format(args.mm))
+                                           "full_{}mm_sharp".format(args.mm))
 
         for path_ in [patient_input_path, patient_target_path]:
             full_pixels = get_pixels_hu(load_scan(path_))
